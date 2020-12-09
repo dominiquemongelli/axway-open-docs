@@ -52,7 +52,7 @@ The root entity has many direct children. To sort them out, a first level of hie
 
 ### META-INF
 
-The META-INF folder contains the `_types.yaml` file. This file contains the definition of all the entity types in the entity store model. This it is where you can find useful information about the fields you can use for an [entity type](/docs/apim_yamles/apim_yamles_references/yamles_types).
+The META-INF folder contains the `types` directory. This directory contains the definition of all the entity types in the entity store model. This it is where you can find useful information about the fields you can use for an [entity type](/docs/apim_yamles/apim_yamles_references/yamles_types).
 
 ### _parent.yaml
 
