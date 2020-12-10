@@ -62,7 +62,7 @@ The flags have the following meaning at export time:
 
 `EXPORT_TYPES` and `EXPORT_TRUNKS` are always enabled, meaning that they are set even if they are not provided in the file provided through the `--export-descriptor` parameter to the `export` command.
 
-The `EXPORT_TYPES` flag ensures all the type information for the selected entities is exported. Type information for the parent entities and the child entities is also included. The type information is stored at `META-INF/_types.yaml`. If this flag is disabled, only entity types for the selected entities are exported.
+The `EXPORT_TYPES` flag ensures all the type information for the selected entities is exported. Type information for the parent entities and the child entities is also included. The type information is stored at `META-INF/types/`. If this flag is disabled, only entity types for the selected entities are exported.
 
 If `EXPORT_CLOSURE` is enabled, all entities referred to by the selected entities and their children are also exported. The type information for these entities will also be included. If this flag is disabled, the fragment might not contain all entities that are referred to from those included in the fragment. In this case, the YAML configuration can only be validated with the `--allow-invalid-ref` parameter. For more information, see [how to allow unresolved references](/docs/apim_yamles/apim_yamles_cli/yamles_cli_validate/#disable-entity-reference-check).
 
