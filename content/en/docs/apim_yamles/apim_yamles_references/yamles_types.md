@@ -6,11 +6,11 @@
 "description": "Learn how entity types are described in a YAML configuration."
 }
 
-The `types` folder located under the `META-INF` directory of a YAML configuration contains the definition of all the entity types in the Entity Store model. An [entity type](/docs/apigtw_devguide/entity_store/#entity-types) is a description of an entity in the Entity Store.
+The `types` directory located under the `META-INF` directory of a YAML configuration contains the definition of all the entity types in the Entity Store model. An [entity type](/docs/apigtw_devguide/entity_store/#entity-types) is a description of an entity in the Entity Store.
 
-The `types` folder is basically a directory tree on which relationships between types are managed in the logical manner of a directory tree.
+The `types` directory contains subdirectories organized in a hierarchical tree structure that represents the inheritance relationships between types.
 
-The YAML Entity Store supports all entity types *and* custom types.
+The YAML Entity Store supports all entity types and custom types.
 
 ## Simple type
 
@@ -102,14 +102,16 @@ And considering the following directory structure
 
 ![types example](/Images/apim_yamles/yamles_types_example.png)
 
-We could say that:
+We can say that:
 
-* As *JavaProcess.yaml* file is containing within *Process* directory: `JavaProcess` is a child type of `Process` type.
-* As *NetService.yaml* file is containing within *JavaProcess* directory: `NetService` is a child type of `JavaProcess` type.
+* As `JavaProcess.yaml` file is contained within `Process` directory: `JavaProcess` is a child type of `Process` type.
+* As `NetService.yaml` file is contained within `JavaProcess` directory: `NetService` is a child type of `JavaProcess` type.
 
 ## Custom types
 
-Custom types can be added by providing a yaml file definition of an entity type, and put in the right directory.
+Custom types can be added by creating a YAML file definition of an entity type, and placing it in the correct subdirectory under `META-INF/types`.
+
+An example of creating entity type named `AnotherNetService`:
 
 ```yaml
 name: AnotherNetService
@@ -131,7 +133,15 @@ components:
 
 ![types example](/Images/apim_yamles/yamles_types_custom_example.png)
 
-Looking at directory structure, *AnotherNetService.yaml* is containing inside *JavaProcess* directory. It means that `AnotherNetService` type is a child of `JavaProcess` type.
+In the example directory structure above, `AnotherNetService.yaml` is contained inside the `JavaProcess` directory. This means that `AnotherNetService` type is a child type of the `JavaProcess` type.
+
+{{% pageinfo color="primary" %}}
+If the type you inherit from does not have any child yet, create a directory named as the parent type name (without *yaml* extension) aside of the parent type definition. You can then put your custom type within the newly created directory.
+{{% /pageinfo %}}
+
+{{% pageinfo color="primary" %}}
+Entity instances of custom types must be put in `System` directory. Refer to [Directory Mapping](/docs/apim_yamles/apim_yamles_references/yamles_top_directories) for more informations.
+{{% /pageinfo %}}
 
 ## Cardinality
 
@@ -141,19 +151,3 @@ Looking at directory structure, *AnotherNetService.yaml* is containing inside *J
 |   +    |  1  |  ∞  |    Yes (if no default value) |
 |   ?    |  0  |  1  |    No     |
 |   *    |  0  |  ∞  |    No     |
-
-## Navigate in types directory
-
-To create a `NetService` type
-
-* Identify under which directory the *NetService.yaml* file should be put in.
-* If the type you inherit from does not have any child, create a directory named as the type name (without *yaml* extension) aside of the parent type definition
-* Put the *NetService.yaml* under the folder identified above. Make sure that the type name within the file matches the filename without *yaml* extension
-* In order to know what fields can be used, move up the types hierarchy.
-* add your own custom fields if you need to
-* Search for components in the directory tree (note that some can be defined in the ancestor).
-* `NetService` has two components.
-    * Search for `"name: LoadableModule"` and/or for `"name: ClassLoader"`.
-    * Do first steps again to get all required and optional fields for each entity type.
-
-{{% alert color="warning" %}}Despite what is in the model, some fields are said to be mandatory (cardinality=1 and no default value) are not mandatory. Double check with Policy Studio if in doubt.{{% /alert %}}
