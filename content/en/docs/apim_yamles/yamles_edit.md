@@ -158,10 +158,10 @@ When edits are complete on the YAML configuration, you must create a `.tar.gz` f
 
 {{< alert title="Note">}}Encrypting a private key via openssl and adding it to the YAML configuration is not supported. This must be done before packaging the `.tar.gz` and deploying to a gateway group that has a matching passphrase.{{< /alert >}}
 
-## How to manually create an entity instance YAML file
+## Manually create an entity instance YAML file
 
 {{< alert title="Note">}}
-This section uses the [Entity Types](/docs/apim_yamles/apim_yamles_references/yamles_top_directories) directory. Please refer to the dedicated section for more information
+This section uses to the [Entity Types](/docs/apim_yamles/apim_yamles_references/yamles_types) directory. Please refer to the dedicated section for more information
 {{< /alert >}}
 
 To create an entity instance of `NetService` type
@@ -175,8 +175,8 @@ To create an entity instance of `NetService` type
 * `NetService` has two components: `LoadableModule` and `ClassLoader`
     * Search for YAML files `LoadableModule.yaml` and for `ClassLoader.yaml` within `META-INF/types` directory
     * Do first steps again to get all required and optional fields for each entity type.
-* If the entity instance you've created is a [container entity](/docs/apim_yamles/yamles_structure.md#_parentyaml)
-    * Create a new directory named as the new entity instance and put within the `_parent.yaml` YAML file:
+* If the entity instance you've created is a [container entity](/docs/apim_yamles/yamles_structure#_parentyaml)
+    * Create a new directory named like the new entity instance. Create a YAML file named `_parent.yaml`, and put in within the created directory
 
 ```yaml
 ---
@@ -187,7 +187,7 @@ fields:
 
 ![new container entity](/Images/apim_yamles/yamles_new_container_entity.png)
 
-* If the entity instance you've created is not a container entity. Put the newly YAML file within the correct directory:
+* If the entity instance you've created is not a container entity. Create a YAML file named like the field *name*. Put it within the correct directory:
 
 ```yaml
 ---
