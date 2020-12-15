@@ -41,4 +41,4 @@ To convert your XML federated configuration to YAML:
 
 For deployment to an API Gateway runtime, see [Packaging and deployment](/docs/apim_yamles/yamles_packaging_deployment/).
 
-For troubleshooting any errors, and more details on options and commands, see [CLI Tool](/docs/apim_yamles/yamles_cli).
+For troubleshooting any errors, and more details on options and commands, see [CLI Tool](/docs/apim_yamles/apim_yamles_cli).
