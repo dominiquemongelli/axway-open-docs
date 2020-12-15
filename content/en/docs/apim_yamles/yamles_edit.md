@@ -157,3 +157,46 @@ The file `/home/user/yaml/Environment Configuration/Certificate Store/Axway-key.
 When edits are complete on the YAML configuration, you must create a `.tar.gz` file and deploy it to your running API Gateway.
 
 {{< alert title="Note">}}Encrypting a private key via openssl and adding it to the YAML configuration is not supported. This must be done before packaging the `.tar.gz` and deploying to a gateway group that has a matching passphrase.{{< /alert >}}
+
+## How to manually create an entity instance YAML file
+
+{{< alert title="Note">}}
+This section uses the [Entity Types](/docs/apim_yamles/apim_yamles_references/yamles_top_directories) directory. Please refer to the dedicated section for more information
+{{< /alert >}}
+
+To create an entity instance of `NetService` type
+
+* Search for YAML file `NetService.yaml` within `META-INF/types` directory
+* In order to know what fields can be used, move up to the ancestor types by processing the following way:
+    * `NetService.yaml` is contained within `JavaProcess` directory. Check fields within YAML entity type file `JavaProcess.yaml`
+    * `JavaProcess.yaml` is contained within `Process` directory. Check fields within YAML entity type file `Process.yaml`
+    * Continue until reaching the root directory `Entity`
+* Search for components (proceed the same way than for fields)
+* `NetService` has two components: `LoadableModule` and `ClassLoader`
+    * Search for YAML files `LoadableModule.yaml` and for `ClassLoader.yaml` within `META-INF/types` directory
+    * Do first steps again to get all required and optional fields for each entity type.
+* If the entity instance you've created is a [container entity](/docs/apim_yamles/yamles_structure.md#_parentyaml)
+    * Create a new directory named as the new entity instance and put within the `_parent.yaml` YAML file:
+
+```yaml
+---
+type: NetService
+fields:
+  name: MyService
+```
+
+![new container entity](/Images/apim_yamles/yamles_new_container_entity.png)
+
+* If the entity instance you've created is not a container entity. Put the newly YAML file within the correct directory:
+
+```yaml
+---
+type: InetInterface
+fields:
+  port: 8080
+  name: My Traffic HTTP Interface
+```
+
+![new entity](/Images/apim_yamles/yamles_new_entity.png)
+
+{{% alert color="warning" %}}Despite what is in the model, some fields are said to be mandatory (cardinality=1 and no default value) are not mandatory. Double check with Policy Studio if in doubt.{{% /alert %}}
