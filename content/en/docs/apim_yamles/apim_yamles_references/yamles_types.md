@@ -136,7 +136,7 @@ components:
 In the example directory structure above, `AnotherNetService.yaml` is contained inside the `JavaProcess` directory. This means that `AnotherNetService` type is a child type of the `JavaProcess` type.
 
 {{% pageinfo color="primary" %}}
-When adding a new custom entity type, the parent entity type of your custom type may not yet have any child entity types. In this case, create a new directory named the same as the parent type name (without `.yaml` extension) at the same level as the parent type YAML file. You can then put your new custom entity type YAML file in the newly created directory
+When adding a new custom entity type, the parent entity type of your custom type may not yet have any child entity types. In this case, create a new directory named the same as the parent type name (without `.yaml` extension) at the same level as the parent type YAML file. You can then put your new custom entity type YAML file in the newly created directory.
 {{% /pageinfo %}}
 
 {{% pageinfo color="primary" %}}

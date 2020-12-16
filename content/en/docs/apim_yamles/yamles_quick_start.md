@@ -12,7 +12,7 @@
 * Before converting your XML federated configuration you must upgrade it using [upgradeconfig](/docs/apim_installation/apigw_upgrade/upgrade_analytics/#upgradeconfig-options) or [projupgrade](/docs/apim_reference/devopstools_ref/).
 
 {{< alert title="Note">}}
-If your are using git in Windows environment, make sure to activate git `longpaths` configuration to avoid *filename too long* error on checkout
+If you are using git for your YAML configurations on a Windows operating system, make sure to set git configuration setting `core.longpaths` to avoid *filename too long* error on checkout.
 
 ```
 git config core.longpaths true
