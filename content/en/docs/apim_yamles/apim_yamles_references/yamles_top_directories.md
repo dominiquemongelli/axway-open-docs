@@ -95,5 +95,5 @@ The Mapping is presented as such:
 
 ## System
 
-* Any other types (children of Root)
+* Any other types (children of `root`)
 * Any custom types
