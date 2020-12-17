@@ -141,6 +141,8 @@ YAML files for entity instances of custom types must be placed in the `System` d
 
 ## Cardinality
 
+The following table shows the meaning of cardinality symbol found in types:
+
 | Symbol | Min | Max | Mandatory |
 |:------:|:---:|:---:|:---------:|
 |   1    |  1  |  1  |    Yes (if no default value) |
