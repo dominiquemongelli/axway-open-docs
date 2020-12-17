@@ -6,9 +6,9 @@
 "description": "Learn how entity types are described in a YAML configuration."
 }
 
-The `types` directory located under the `META-INF` directory of a YAML configuration contains the definition of all the entity types in the Entity Store model. An [entity type](/docs/apigtw_devguide/entity_store/#entity-types) is a description of an entity in the Entity Store.
+The `types` directory located under the `META-INF` directory of a YAML configuration contains the definition of all the entity types in the Entity Store model, and its subdirectories are organized in a hierarchical tree structure that represents the inheritance relationships between types.
 
-The `types` directory contains subdirectories organized in a hierarchical tree structure that represents the inheritance relationships between types.
+An [entity type](/docs/apigtw_devguide/entity_store/#entity-types) is a description of an entity in the Entity Store.
 
 The YAML Entity Store supports all entity types and custom types.
 
@@ -64,7 +64,7 @@ loadorder: 1000100
 
 ## Types with inheritance
 
-Considering the following types: `Process`, `JavaProcess` and `NetService`
+Consider the following types: `Process`, `JavaProcess` and `NetService`:
 
 ```yaml
 name: Process
@@ -98,20 +98,20 @@ components:
   ClassLoader: '?'
 ```
 
-And considering the following directory structure
+and, the following directory structure:
 
 ![types example](/Images/apim_yamles/yamles_types_example.png)
 
 We can say that:
 
-* As `JavaProcess.yaml` file is contained within `Process` directory: `JavaProcess` is a child type of `Process` type.
-* As `NetService.yaml` file is contained within `JavaProcess` directory: `NetService` is a child type of `JavaProcess` type.
+* As `JavaProcess.yaml` file is contained within `Process` directory, then `JavaProcess` is a child type of `Process` type.
+* As `NetService.yaml` file is contained within `JavaProcess` directory, then `NetService` is a child type of `JavaProcess` type.
 
 ## Custom types
 
-Custom types can be added by creating a YAML file definition of an entity type, and placing it in the correct subdirectory under `META-INF/types`.
+You can add custom types by creating a YAML file definition of an entity type, and placing the file in the correct subdirectory, under `META-INF/types`.
 
-An example of creating entity type named `AnotherNetService`:
+The following example shows how to create an entity type named `AnotherNetService`:
 
 ```yaml
 name: AnotherNetService
@@ -131,17 +131,13 @@ components:
   ClassLoader: '?'
 ```
 
+In the resulting directory structure, `AnotherNetService.yaml` is contained inside the `JavaProcess` directory, meaning that `AnotherNetService` type is a child type of the `JavaProcess` type.
+
 ![types example](/Images/apim_yamles/yamles_types_custom_example.png)
 
-In the example directory structure above, `AnotherNetService.yaml` is contained inside the `JavaProcess` directory. This means that `AnotherNetService` type is a child type of the `JavaProcess` type.
+When adding a new custom entity type, the parent entity type of your custom type might not yet have any child entity types. In this case, create a new directory named the same as the parent type, without `.yaml` extension, at the same level as the parent type YAML file. Then, add your new custom entity type YAML file in the newly created directory.
 
-{{% pageinfo color="primary" %}}
-When adding a new custom entity type, the parent entity type of your custom type may not yet have any child entity types. In this case, create a new directory named the same as the parent type name (without `.yaml` extension) at the same level as the parent type YAML file. You can then put your new custom entity type YAML file in the newly created directory.
-{{% /pageinfo %}}
-
-{{% pageinfo color="primary" %}}
-YAML files for entity instances of custom types must be put in `System` directory. Refer to [Directory Mapping](/docs/apim_yamles/apim_yamles_references/yamles_top_directories) for more information.
-{{% /pageinfo %}}
+YAML files for entity instances of custom types must be placed in the `System` directory. For more information, see [Directory Mapping](/docs/apim_yamles/apim_yamles_references/yamles_top_directories).
 
 ## Cardinality
 
