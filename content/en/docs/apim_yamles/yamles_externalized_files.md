@@ -26,8 +26,7 @@ children:
   fields:
     name: Set Backend message
     outputContentType: application/json
-    body#ref: Get organizationId - Set Backend message.json # the message has been externalized
-                                                            # field "body" has been renamed in "body#ref"
+    body: '{{file "Get organizationId - Set Backend message.json"}}' # the message has been externalized
 ```
 
 Content of `Get organizationId - Set Backend message.json`:
