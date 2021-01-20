@@ -86,6 +86,8 @@ A private key is sensitive data that is externalized into a separate file in the
 ./yamles encrypt --file /home/user/private-key.pem --source /home/user/yaml --passphrase "changeme"
 ```
 
+{{< alert title="Note">}}`yamles encrypt` with `--file` option only supports encryption of `PEM` file containing header (starting line `-----BEGIN...`) and footer (ending line `-----END...`){{< /alert >}}
+
 Both the `--text` and `--file` options require a YAML configuration to be specified in the `--source` parameter. The YAML configuration is not updated by the command. You must use the same YAML configuration that you will be adding the encrypted text or file into so that the data is encrypted correctly for the destination YAML configuration.
 
 See section [Add a new certificate and private key to a YAML configuration](/docs/apim_yamles/yamles_edit/#add-a-new-certificate-and-private-key-to-a-yaml-configuration) for more information regarding adding a certificate and private key to a YAML configuration. Note that `encrypt --file` option may be used to encrypt the content of any type of file. The operation will update the file which will always be base64 encoded after encryption, regardless of the format of the original unencrypted file. Note that encrypting a private key via `openssl` and adding it to the YAML configuration is not supported.

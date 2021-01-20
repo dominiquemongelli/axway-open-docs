@@ -53,7 +53,7 @@ Files externalization are managed via placeholder `{{file "my_file" "file_option
     * relative to the directory of the YAML file referencing it. In the above example, both files are in the same directory
 
 * `file_option` can be:
-    *  empty: `{{file "my_file"}}`
+    * empty: `{{file "my_file"}}`
     * `binary`: `{{file "my_file" "binary"}}`
     * `pem`: `{{file "my_file" "pem"}}`
 
