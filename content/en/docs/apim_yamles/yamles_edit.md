@@ -28,11 +28,56 @@ Building a new complex policy without an existing YAML format example might be c
 
 We recommend you to develop a new complex policy in an XML project that contains all the configuration you previously converted to YAML, so that you can reference other existing configuration. You must ensure that all referenced entities that need to be resolvable can be resolved eventually.
 
-## Add a new certificate and private key to a YAML configuration
+## Certificate and private key management
+
+### Certificate and private key during XML federated conversion
+
+Certificates and private keys that exist in the XML federated configuration, which then get converted to YAML format, will be formatted as is, without header (starting line `-----BEGIN...`) and footer (ending line `-----END...`).
+
+The YAML files looks like:
+
+`Axway-converted.yaml`
+
+```yaml
+---
+type: Certificate
+fields:
+  dname: Axway-converted
+  key: '{{file "Axway-converted-key.pem"}}'
+  content: '{{file "Axway-converted-cert.pem"}}'
+```
+
+`Axway-converted-key.pem`
+
+```
+---
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDLd+Zv/rC6Wf/FAGc6YM8APIZD
+MgEtJjOWKJiOajzI22GFsUcU3XYfV8oayI12j67IMVaD1RU+o+u6D+Y7tPj60/kvqORAjpnad7OS
+0zs59KMDvfXghM3EkN8/mDxb11yK19VMJvk2ZMcpRn/6/gCFbpa6Nj8OpF7oLCRhbcue1R+JiSLF
+R9zbJzxfkgkQ9Q256+ZMlOgYdrqpytTltYPOrKD3vKR9DiOTc/KC5kCZFmkgDJz5AQTpTtvZCXJW
+aro+PbAqbyc//ABTTrhTIBkyB+aFM49hg/Ej90KitvxI/Nu4lzT2XiDd9wqiTzElYM+Q0UMk0BFd
+vnckh1sLYHe3AgMBAAECggEABK9VEf0WSqQp3Hpe5hw2h/XczY1IM6buhyWWJalSjvlmLHLhhRx4
+...
+```
+
+`Axway-converted-cert.pem`
+
+```
+---
+MIICrTCCAZUCBgE9RY7XxjANBgkqhkiG9w0BAQUFADAaMRgwFgYDVQQDEw9TYW1wbGVzIFRlc3Qg
+Q0EwHhcNMTMwMzA3MTU1MzAwWhcNMzcwMTEwMTA1NjAwWjAaMRgwFgYDVQQDEw9TYW1wbGVzIFRl
+c3QgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDLd+Zv/rC6Wf/FAGc6YM8APIZD
+MgEtJjOWKJiOajzI22GFsUcU3XYfV8oayI12j67IMVaD1RU+o+u6D+Y7tPj60/kvqORAjpnad7OS
+0zs59KMDvfXghM3EkN8/mDxb11yK19VMJvk2ZMcpRn/6/gCFbpa6Nj8OpF7oLCRhbcue1R+JiSLF
+R9zbJzxfkgkQ9Q256+ZMlOgYdrqpytTltYPOrKD3vKR9DiOTc/KC5kCZFmkgDJz5AQTpTtvZCXJW
+...
+```
+
+### Add a new certificate and private key to a YAML configuration
 
 This section covers the steps required to add a new certificate and private key to an existing YAML configuration.
 
-Note that certificates and private keys that exist in the XML federated configuration, which then get converted to YAML format, will be formatted as required with no additional steps required. In some cases, you might only need to add a new certificate to the YAML configuration, in this case the steps for the private key can be ignored.
+In some cases, you might only need to add a new certificate to the YAML configuration, in this case the steps for the private key can be ignored.
 
 1. You must have a certificate in a `PEM` file and its related private key in a separate `PEM` file. For example, `Axway-cert.pem` and `Axway-key.pem`. The private key cannot be encrypted with OpenSSL, as it is not supported.
 
@@ -65,14 +110,16 @@ Note that certificates and private keys that exist in the XML federated configur
 
 4. Create the `/Environment Configuration/Certificate Store/Axway.yaml` file in your YAML entity store:
 
-    ```yaml
-    ---
-    type: Certificate
-    fields:
-      dname: Axway
-      key: '{{file "Axway-key.pem" "pem"}}'
-      content: '{{file "Axway-cert.pem" "pem"}}'
-    ```
+```yaml
+---
+type: Certificate
+fields:
+  dname: Axway
+  key: '{{file "Axway-key.pem" "pem"}}'
+  content: '{{file "Axway-cert.pem" "pem"}}'
+```
+
+{{< alert title="Note">}}`pem` option in `{{file}}` placeholder is mandatory when using a `PEM` file containing header and footer({{< /alert >}}
 
 5. Edit another entity that requires a certificate and private key, for example, an `XML Signature filter` (see the `signingCert` field in the following example). It now points to the new certificate and private key via its YamlPK `/Environment Configuration/Certificate Store/Axway`.
 
@@ -117,6 +164,8 @@ cd apigateway/posix/bin
 ./yamles encrypt --file ~/yaml/Environment\ Configuration/Certificate\ Store/Axway-key.pem --source /home/user/yaml --passphrase changeme
 The file `/home/user/yaml/Environment Configuration/Certificate Store/Axway-key.pem` has been encrypted
 ```
+
+{{< alert title="Warning">}}`yamles encrypt` with `--file` option only supports encryption of `PEM` file containing header and footer({{< /alert >}}
 
 The YAML configuration referenced in the `--source` parameter of the `encrypt` command must be the destination YAML configuration to ensure it is encrypted correctly.
 
