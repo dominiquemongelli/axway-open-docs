@@ -34,7 +34,7 @@ We recommend you to develop a new complex policy in an XML project that contains
 
 Certificates and private keys that exist in the XML federated configuration, which then get converted to YAML format, will be formatted as is, without header (starting line `-----BEGIN...`) and footer (ending line `-----END...`).
 
-The YAML files looks like:
+The related certificate and private key files in the YAML configuration will be formatted as follows:
 
 `Axway-converted.yaml`
 
