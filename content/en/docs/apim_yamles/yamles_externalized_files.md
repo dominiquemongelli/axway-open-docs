@@ -46,7 +46,7 @@ Content of `Get organizationId - Set Backend message.json`:
 }
 ```
 
-Files externalization are managed via placeholder `{{file "my_file" "file_option"}}`:
+File externalization is managed with the placeholder `{{file "my_file" "file_option"}}`:
 
 * `my_file` is the name of the externalized file. The location can be:
     * absolute, the path begins with a `/`
