@@ -57,7 +57,22 @@ MgEtJjOWKJiOajzI22GFsUcU3XYfV8oayI12j67IMVaD1RU+o+u6D+Y7tPj60/kvqORAjpnad7OS
 R9zbJzxfkgkQ9Q256+ZMlOgYdrqpytTltYPOrKD3vKR9DiOTc/KC5kCZFmkgDJz5AQTpTtvZCXJW
 aro+PbAqbyc//ABTTrhTIBkyB+aFM49hg/Ej90KitvxI/Nu4lzT2XiDd9wqiTzElYM+Q0UMk0BFd
 vnckh1sLYHe3AgMBAAECggEABK9VEf0WSqQp3Hpe5hw2h/XczY1IM6buhyWWJalSjvlmLHLhhRx4
-...
+TM5zq9w0TaePSbLBIDX20ENr+RPGpFdNaFEbKrrDzqy55CrfaqEMexAj9MEZ+Tp1lnITgd5afW7f
+BZ9knOVE1bjKUSv7ZGcW0fuy4sS+/PJR8RybFdc2WgjZt0kw8L9fUsmq/M4ye00DVOoI/eTGjfky
+ooVtUAJJXYI1FMvUuyC43qJuOMpfme3xY79AOQpXBvTamG/xpr7/MX5Q4yxu5GEo7eLk91xwSKFG
+OYgC33SLgxOIRecLxgxZp72g4GZqGLzcjmTDxpMgS32RzbRtqDNCp5Twjvw0aQKBgQDmzo6WAMa9
+jCbEtXsqCQ4CkCYbMJp3d9Jxzk6R2kjwMRQLDL+P+YkIMd/tntrd3DS2vbdbzlGxFkDROhpV+T+T
+iYlqFkY60cUaeGBWyWTWkKksrLfsJz4M5/seflYX4L9H5vjDChybzpaViTUHof1xB6f44fheeW82
+sV7v+UQQ9QKBgQDhrWwtGJjccJgAfZwqnBd0snKDBUjpSlUgBQnyYzNXbM9IN9q4vaHymt5Zgg5f
+do4Bfjdmx4O3W6RtIysmw92hyad8SIbl2JNN15FwQQ2ZpgaIgsUyVQGywtkiXzFGnir3YyEjtb/S
+5y1X4Au2mnof1K2Q9UYUKeEsoLFNDj/KewKBgQCddz8AR/dPSlcIzWgB/bt5NC9LTZWU/EKvMjmY
+eHxaoqEyCLiI2Y4L8Tr9OuvHgXzVUAnQsKo7TxtZo3JkRXCCj8sYfancZ1E6BfZ0P2J0oK1KtWul
+ygAjfgFthHPoRoU54PLG3hc2lXNXAg0T8AihHMAUpNZ2XhLqFYjX4A/4IQKBgQCldRF3qq4ACKjY
+yz8g2lo0G9TrDIfdSrtIg4k8ZdCxizwZ1aGNirLefP8CHuFMyk3o+FHEEAkY+J5/yaYMgNPQl1kt
+PLtybqvpCWA/LeK7wMbPdRkBAuQA3Ox3T9V/0dzsjYgxd0JRbV6IK+JKmc1p4vLx8XHUvLOzlYkI
+VqccWwKBgByv6gva+WWT5H7CZCicURkLdkRx0RGJjZKW5m7uwWPLAkb5zVozsCSGhNZDX3xuPzqx
+z+m92RPtpagPgowuDomFodteFZOsSjCkvbiwx7JGEsvwEraMwxYGPg3sEpVa+bS/4Ptpj8llGMpN
+NWjvpIPxQaBeo3FHRDPFjvc7qjUP
 ```
 
 `Axway-converted-cert.pem`
@@ -70,14 +85,18 @@ c3QgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDLd+Zv/rC6Wf/FAGc6YM8APIZD
 MgEtJjOWKJiOajzI22GFsUcU3XYfV8oayI12j67IMVaD1RU+o+u6D+Y7tPj60/kvqORAjpnad7OS
 0zs59KMDvfXghM3EkN8/mDxb11yK19VMJvk2ZMcpRn/6/gCFbpa6Nj8OpF7oLCRhbcue1R+JiSLF
 R9zbJzxfkgkQ9Q256+ZMlOgYdrqpytTltYPOrKD3vKR9DiOTc/KC5kCZFmkgDJz5AQTpTtvZCXJW
-...
+aro+PbAqbyc//ABTTrhTIBkyB+aFM49hg/Ej90KitvxI/Nu4lzT2XiDd9wqiTzElYM+Q0UMk0BFd
+vnckh1sLYHe3AgMBAAEwDQYJKoZIhvcNAQEFBQADggEBAECtUaJVPApyeJrxqb3j49QbtL3rhusQ
+ae70epkkU0XFu+8NuYoz4pVs5Mj9g0HPXXvRvgJAQzCzQ34XVFZGB18IjOkoyu0RodTadGi7fAH5
+0B/SEteGRhYV1JzE+IKxG3n6nTrrHgINL8+QL4eHiozEKfJ/vWqw1j2Zc/47vcalGYYqTJyrSmJy
+pX6tVTYRbArvwaU+LzYLjEJkWgfZc09eO8JiA1ZwE4ud5o9Tpbj5IdUQkoLyPTxtU0a6A2PMAs4j
+MTnD3Mh2YRB4gGCAPDN+Xl999ls2KCoVdLjXIhOD2YwWXGmv3vaAUyc32wwcro69/wXvj41tFIez
+w98SGM8=
 ```
 
 ### Add a new certificate and private key to a YAML configuration
 
 This section covers the steps required to add a new certificate and private key to an existing YAML configuration.
-
-In some cases, you might only need to add a new certificate to the YAML configuration, in this case the steps for the private key can be ignored.
 
 1. You must have a certificate in a `PEM` file and its related private key in a separate `PEM` file. For example, `Axway-cert.pem` and `Axway-key.pem`. The private key cannot be encrypted with OpenSSL, as it is not supported.
 
