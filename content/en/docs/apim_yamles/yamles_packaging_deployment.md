@@ -6,7 +6,7 @@
 "description": "Learn how to package and deploy a YAML configuration to the API Gateway runtime."
 }
 
-{{< alert title="Note">}}When a YAML configuration is deployed to an API Gateway group, it is still possible to switch it back and deploy an XML federated configuration to that same API Gateway group. When an API Gateway instance is first created, an XML federated configuration is deployed with it.{{< /alert>}}
+{{< alert title="Note">}}When a YAML configuration is deployed to an API Gateway group, it is still possible to switch it back and deploy an XML federated configuration to that same API Gateway group. When an API Gateway instance is first created, an XML federated configuration or a YAML configuration can be deployed in it.{{< /alert>}}
 
 ## Build the deployment package
 
@@ -179,7 +179,7 @@ The API Gateway Manager UI and `managedomain` script will work as normal for top
 
 For example, you can:
 
-* Continue to use `managedomain` to change a group passphrase when YAML is deployed (`–change_passphrase` option).
+* Continue to use `managedomain` to change a group passphrase when YAML is deployed (`--change_passphrase` option).
 * Download the currently deployed YAML `.tar.gz` (`–download_archive` option).
 * Use API Gateway Manager UI to check if a group is consistent, and restart API Gateway instances.
 
