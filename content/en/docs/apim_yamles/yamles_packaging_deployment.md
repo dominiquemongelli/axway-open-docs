@@ -185,18 +185,6 @@ For example, you can:
 
 Refer to [Manage domain topology in API Gateway Manager](/docs/apim_administration/apigtw_admin/managetopology/) and [managedomain command reference](https://axway-open-docs.netlify.app/docs/apim_reference/managedomain_ref/) for more information on these tools.
 
-### Create a new instance in a group where YAML is deployed
-
-YAML configurations can be deployed to API Gateway instances in a group that may be spread over different hosts. However, it is not possible to add a new instance to a group of API Gateways that already has a YAML configuration deployed to it.
-
-The [Create an API Gateway group](/docs/apim_administration/apigtw_admin/managetopology/#create-an-api-gateway-group) and [Create an API Gateway instance](/docs/apim_administration/apigtw_admin/makegateway/#create-an-api-gateway-instance) will not work when YAML is deployed to the group.
-
-To workaround this limitation, perform the following:
-
-1. Deploy a factory XML federated configuration or some other `.fed` file to the group temporarily.
-2. Add the API Gateway instance to the group through the API Gateway Manager UI, or the `managedomain` script.
-3. Deploy the YAML configuration back to the group.
-
 ### Update deployment archive properties
 
 You can use option `22` of `managedomain` to update the deployment package properties without performing a deployment. This is not supported for YAML deployments. Instead, edit the contents of the manifest files in the `META_INF`, then redeploy it.
