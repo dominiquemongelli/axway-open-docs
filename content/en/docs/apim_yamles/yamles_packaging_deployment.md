@@ -8,6 +8,16 @@
 
 {{< alert title="Note">}}When a YAML configuration is deployed to an API Gateway group, it is still possible to switch it back and deploy an XML federated configuration to that same API Gateway group. When an API Gateway instance is first created, an XML federated configuration or a YAML configuration can be deployed in it.{{< /alert>}}
 
+## Create an API Gateway initialized with a YAML factory configuration
+
+`managedomain` is used to create API Gateway instances ([Create an API Gateway instance](/docs/apim_administration/apigtw_admin/makegateway/#create-an-api-gateway-instance)). The first API Gateway in a group is created by default with a XML federated configuration. To create an API Gateway instance with a YAML configuration, run the following command:
+
+```
+./managedomain --create_instance --yaml --group TestGroup -n MyGateway
+```
+
+{{< alert title="Note">}}`--yaml` has no effect for subsequent API Gateway creation as existing configuration of the group will be used.{{< /alert>}}
+
 ## Build the deployment package
 
 After you create a YAML configuration that you wish to deploy to the API Gateway, you must build a deployment package before deploying it. The deployment package is a `.tar.gz` file. This is the equivalent of the `.fed` file for an XML federated configuration. You can use standard tooling to build a `.tar.gz` file that contains the content of the directory of the YAML configuration. The `.tar.gz` file must have the following structure inside:
