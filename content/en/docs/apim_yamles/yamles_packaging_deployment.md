@@ -6,7 +6,7 @@
 "description": "Learn how to package and deploy a YAML configuration to the API Gateway runtime."
 }
 
-{{< alert title="Note">}}When a YAML configuration is deployed to an API Gateway group, it is still possible to switch it back and deploy an XML federated configuration to that same API Gateway group. When an API Gateway instance is first created, an XML federated configuration or a YAML configuration can be deployed in it.{{< /alert>}}
+{{< alert title="Note">}}When a YAML configuration is deployed to an API Gateway group, it is still possible to switch it back and deploy an XML federated configuration to that same API Gateway group. When an API Gateway instance is first created, an XML federated or YAML configuration is deployed with it.{{< /alert>}}
 
 ## Create an API Gateway initialized with a YAML factory configuration
 
