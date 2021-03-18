@@ -40,10 +40,6 @@ When you import a YAML configuration fragment into a YAML configuration using `y
 
 We do not recommend you to import into or export from a YAML configuration that uses environmentalization.
 
-## API Gateway group instance
-
-An API Gateway instance cannot be added to a group when the group has a YAML configuration deployed to it.
-
 ## Certificate
 
 * Private keys are in external files in DER format.
