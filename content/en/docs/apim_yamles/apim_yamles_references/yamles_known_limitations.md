@@ -81,10 +81,6 @@ YAML configuration for Node manager is not supported.
 
 YAML configuration for Analytics is not supported.
 
-## YAML factory configuration
-
-A YAML factory configuration is not provided out-of-the-box, but it can be created by converting the XML federated factory configuration using `yamles fed2yaml`.
-
 ## Deployment archive
 
 You can update the deployment archive package properties by choosing `option 22` of the `managedomain` script. For more information, see [Updating Deployment Archive Properties](/docs/apim_yamles/yamles_packaging_deployment/#updating-deployment-archive-properties).
