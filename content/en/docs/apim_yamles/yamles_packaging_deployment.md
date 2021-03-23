@@ -10,33 +10,35 @@
 
 ## Create an API Gateway initialized with a YAML factory configuration
 
-`managedomain` is used to create API Gateway instances ([Create an API Gateway instance](/docs/apim_administration/apigtw_admin/makegateway/#create-an-api-gateway-instance)). The first API Gateway in a group is created by default with a XML federated configuration. To create an API Gateway instance with a YAML configuration, run the following command:
+You can use the `managedomain` command to [create API Gateway instances](/docs/apim_administration/apigtw_admin/makegateway/#create-an-api-gateway-instance). The first API Gateway in a group is created by default with a XML federated configuration. To create an API Gateway instance with a YAML configuration, run the following command:
 
 ```
 ./managedomain --create_instance --yaml --group TestGroup -n MyGateway
 ```
 
-{{< alert title="Note">}}`--yaml` has no effect for subsequent API Gateway creation as existing configuration of the group will be used.{{< /alert>}}
+You don't need to use the `--yaml` option to create subsequent API Gateways, as the existing configuration of the group will be used.
 
 ## Build the deployment package
 
-After you create a YAML configuration that you wish to deploy to the API Gateway, you must build a deployment package before deploying it. The deployment package is a `.tar.gz` file. This is the equivalent of the `.fed` file for an XML federated configuration. You can use standard tooling to build a `.tar.gz` file that contains the content of the directory of the YAML configuration. The `.tar.gz` file must have the following structure inside:
+After you create a YAML configuration, you must build a deployment package before deploying the YAML configuration to API Gateway.
+
+The deployment package is a `.tar.gz` file. This is the equivalent of the `.fed` file for an XML federated configuration. You can use any standard tooling to build a `.tar.gz` file that contains the content of the directory of the YAML configuration.
+
+The `.tar.gz` file must have the following structure inside:
 
 ![YAML deployment package structure](/Images/apim_yamles/yamles_package.png)
 
 {{< alert title="Note">}}The root directory of the YAML configuration cannot be included in the `.tar.gz` file.{{< /alert>}}
 
-You can use any tooling to build a standard `.tar.gz` of this format. Linux command line tooling and the maven-assembly-plugin are described in more detail below.
-
 ### Use command line tooling to build the YAML .tar.gz
 
-You can build a `yaml-config.tar.gz` of the YAML configuration in a directory named `~/yamlconfig` as follows:
+To build a `yaml-config.tar.gz` package for the YAML configuration in a directory named `~/yamlconfig`, follow this example:
 
 ```
 cd ~/yamlconfig && tar -zcvf ../yaml-config.tar.gz * && cd ~
 ```
 
-After running the command above, the `yaml-config.tar.gz` file is created in your home directory.
+After running the command, the `yaml-config.tar.gz` file is created in your home directory.
 
 ### Use maven to build the YAML .tar.gz
 
@@ -61,7 +63,7 @@ You can also use the `maven-assembly-plugin` to generate a `.tar.gz` file via `m
     +pom.xml
 ```
 
-The `pom.xml`:
+The following is the body of the `pom.xml`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -135,9 +137,11 @@ The result of running `mvn clean install` in the root directory of this project 
 
 ## Deployment Package Properties
 
-The API Gateway `.fed`, `.pol`, and `.env` configuration package files include property files that contain name-value pairs describing the package contents, and which are known as package properties. These package property values are stored in package property files (`.mf`). When the XML federated configuration is converted to YAML, the `.mf` files are copied as they are into the `META-INF` directory on the YAML configuration directory structure. By default, `manifest.mf`, `manifest-policy.mf`, and `manifest-environment.mf` files are created after the conversion. These files can be used as before to hold any user-defined name-value properties for the deployment package. You can edited the files in an IDE of your choice, or via a CI/CD job before deployment.
+The API Gateway `.fed`, `.pol`, and `.env` configuration package files include property files that contain name-value pairs describing the package contents and which are known as package properties. These package property values are stored in package property files (`.mf`). When the XML federated configuration is converted to YAML, the `.mf` files are copied as they are into the `META-INF` directory on the YAML configuration directory structure. By default, `manifest.mf`, `manifest-policy.mf`, and `manifest-environment.mf` files are created after the conversion. These files can be used as before to hold any user-defined name-value properties for the deployment package. You can edited the files in an IDE of your choice, or via a CI/CD job before deployment.
 
-You can remove the existing `manifest-policy.mf` and `manifest-environment.mf` files that are created after conversion if the split no longer makes sense for your deployments. If you remove the `manifest.mf`, it will be recreated on the API Gateway side after deployment, and it contains read-only properties IE, timestamp, and format. You can add custom properties to the `manifest.mf`, but the read-only properties must remain. It is best to add any custom properties to either the `manifest-policy.mf` or `manifest-environment.mf`, or even a new custom manifest file, for example `META_INF/custom.mf`.
+You can remove the existing `manifest-policy.mf` and `manifest-environment.mf` files that are created after conversion if the split no longer makes sense for your deployments. If you remove the `manifest.mf`, it will be recreated on the API Gateway side after deployment, and it contains read-only properties, `timestamp` and `format`.
+
+You can add custom properties to the `manifest.mf` file, but do delete the read-only properties. We recommended you to add any custom properties to either the `manifest-policy.mf` or `manifest-environment.mf`, or even a new custom manifest file, for example `META_INF/custom.mf`.
 
 ## Deploy the deployment package
 

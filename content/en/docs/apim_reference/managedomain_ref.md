@@ -7,9 +7,9 @@
 }
 This topic describes how to run `managedomain` in the following modes:
 
-* *Command interpreter mode* — enter commands from a list using tab completion (default mode)
-* *Interactive mode* — follow instructions at the command prompt
-* *Command mode* — enter specific commands and parameters
+* **Command interpreter mode**: Enter commands from a list using tab completion (default mode).
+* **Interactive mode**: Follow instructions at the command prompt.
+* **Command mode**: Enter specific commands and parameters.
 
 The `managedomain` command is available in the following directory:
 
