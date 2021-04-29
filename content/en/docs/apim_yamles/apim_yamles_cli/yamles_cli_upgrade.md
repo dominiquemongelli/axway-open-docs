@@ -9,14 +9,15 @@
 The `upgrade` option may be used to upgrade YAML configurations. Both full configurations, and configuration fragments may be upgraded in the same way.
 
 {{% alert color="warning" title="Upgrade Caution" %}}
-* YAML configurations upgrade is supported starting with version 7.7 May 2021 
+
+* YAML configurations upgrade is supported starting with version 7.7 May 2021.
 * If you need to upgrade an old YAML configuration dated before May 2021, you can upgrade the XML federated configuration using [upgradeconfig](/docs/apim_installation/apigw_upgrade/upgrade_analytics/#upgradeconfig-options) or [projupgrade](/docs/apim_reference/devopstools_ref/#projupgrade-command-options) and convert it again to YAML configuration using the latest YAML CLI [fed2yaml](/docs/apim_yamles/apim_yamles_cli/yamles_cli_convert/#convert-your-xml-configuration-to-a-yaml-configuration) or [frag2yaml](/docs/apim_yamles/apim_yamles_cli/yamles_cli_convert/#convert-your-xml-configuration-fragment-to-a-yaml-configuration-fragment).
+
 {{% /alert %}}
 
 ## Upgrade a YAML configuration
 
-The `upgrade` option has the same goal as the [projupgrade](/docs/apim_reference/devopstools_ref/) tool existing for XML federated configurations. It enables you to upgrade YAML configurations or YAML configuration fragments from earlier versions (7.7 May2021 and later) to the latest. 
-The `upgrade` option is the only entry point available to upgrade YAML configuration. 
+The `upgrade` option has the same goal as the [projupgrade](/docs/apim_reference/devopstools_ref/) tool existing for XML federated configurations. It enables you to upgrade YAML configurations or YAML configuration fragments from earlier versions (7.7 May2021 and later) to the latest. The `upgrade` option is the only entry point available to upgrade YAML configuration.
 
 **Example 1:**
 
@@ -50,7 +51,7 @@ The `upgrade` option is the only entry point available to upgrade YAML configura
 **Example 4:**
 
 * Specify the `.tar.gz` file for the YAML configuration to upgrade.
-* Upgrade the YAML configuration with a non-default passphrase   
+* Upgrade the YAML configuration with a non-default passphrase.
 * Add the upgraded YAML configuration to the `/home/user/yaml-upgraded` directory.
 * Create a `.tar.gz` file of the content of `/home/user/yaml-upgraded`.
 
@@ -65,7 +66,7 @@ YAML configuration upgraded will be encrypted with the same passphrase as the so
 **Example 5:**
 
 * Specify the `.tar.gz` file for the YAML configuration to upgrade.
-* Upgrade the YAML configuration with a non-default passphrase
+* Upgrade the YAML configuration with a non-default passphrase.
 * Add the upgraded YAML configuration to the `/home/user/yaml-upgraded` directory.
 * Create a `.tar.gz` file of the content of `/home/user/yaml-upgraded`.
 
