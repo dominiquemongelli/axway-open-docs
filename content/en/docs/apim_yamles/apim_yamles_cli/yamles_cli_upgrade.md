@@ -17,7 +17,7 @@ The `upgrade` option may be used to upgrade YAML configurations. Both full confi
 
 ## Upgrade a YAML configuration
 
-The `upgrade` option has the same goal as the [projupgrade](/docs/apim_reference/devopstools_ref/) tool existing for XML federated configurations. It enables you to upgrade YAML configurations or YAML configuration fragments from earlier versions (7.7 May2021 and later) to the latest. The `upgrade` option is the only entry point available to upgrade YAML configuration.
+The `upgrade` option has the same goal as the [projupgrade](/docs/apim_reference/devopstools_ref/) tool existing for XML federated configurations. It enables you to upgrade YAML configurations or YAML configuration fragments from earlier versions (7.7 May2021 and later) to the latest. The `upgrade` option is the centralized entry point to upgrade any kind of YAML configuration.
 
 **Example 1:**
 
