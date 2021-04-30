@@ -26,7 +26,7 @@ The `upgrade` option has the same goal as the [projupgrade](/docs/apim_reference
 * Create a `.tar.gz` file of the content of `/home/user/yaml-upgraded`.
 
 ```
-./yamles upgrade --source /home/user/yaml --output-dir /home/user/yaml-upgraded --targz yaml-upgraded.tar.gz
+./yamles upgrade --source /home/user/yaml --output-dir /home/user/yaml-upgraded --targz /home/user/archives/yaml-upgraded.tar.gz
 ```
 
 **Example 2:**
@@ -45,7 +45,7 @@ The `upgrade` option has the same goal as the [projupgrade](/docs/apim_reference
 * Create a `.tar.gz` file of the content of `/home/user/yaml-upgraded`.
 
 ```
-./yamles upgrade --source yaml-to-upgrade.tar.gz --output-dir /home/user/yaml-upgraded --targz yaml-upgraded.tar.gz
+./yamles upgrade --source yaml-to-upgrade.tar.gz --output-dir /home/user/yaml-upgraded --targz /home/user/archives/yaml-upgraded.tar.gz
 ```
 
 **Example 4:**
@@ -56,7 +56,7 @@ The `upgrade` option has the same goal as the [projupgrade](/docs/apim_reference
 * Create a `.tar.gz` file of the content of `/home/user/yaml-upgraded`.
 
 ```
-./yamles upgrade --source yaml-to-upgrade.tar.gz --passphrase secret --output-dir /home/user/yaml-upgraded --targz yaml-upgraded.tar.gz
+./yamles upgrade --source yaml-to-upgrade.tar.gz --passphrase secret --output-dir /home/user/yaml-upgraded --targz /home/user/archives/yaml-upgraded.tar.gz
 ```
 
 {{< alert title="Note">}}

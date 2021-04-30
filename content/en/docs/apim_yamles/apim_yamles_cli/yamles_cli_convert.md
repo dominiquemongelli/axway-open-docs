@@ -30,7 +30,7 @@ The following are examples of how you can use `fed2yaml` in the `yamles` CLI to 
 * Create a `.tar.gz` file of the content of `/home/user/yaml`.
 
 ```
-./yamles fed2yaml --source /home/user/apiprojects/myfed --output-dir /home/user/yaml --targz myconfig.tar.gz
+./yamles fed2yaml --source /home/user/apiprojects/myfed --output-dir /home/user/yaml --targz /home/user/archives/myconfig.tar.gz
 ```
 
 **Example 2:**
