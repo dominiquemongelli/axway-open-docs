@@ -6,7 +6,7 @@
 "description": "Learn how to use the YAML configuration CLI to upgrade a YAML configuration."
 }
 
-The `upgrade` option may be used to upgrade YAML configurations. Both full configurations, and configuration fragments may be upgraded in the same way.
+The `upgrade` option may be used to upgrade YAML configurations. Both full configurations, and configuration fragments can be upgraded the same way.
 
 {{% alert color="warning" title="Upgrade Caution" %}}
 
