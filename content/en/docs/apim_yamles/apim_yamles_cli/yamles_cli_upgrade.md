@@ -54,21 +54,6 @@ The following are examples of different ways that you can use the `upgrade` opti
 The YAML configuration upgraded is encrypted with the same passphrase as the source YAML configuration.
 {{< /alert >}}
 
-**Example 5:**
-
-* Specify the `.tar.gz` file for the YAML configuration to upgrade.
-* Upgrade the YAML configuration with a non-default passphrase.
-* Add the upgraded YAML configuration to the `/home/user/yaml-upgraded` directory.
-* Create a `.tar.gz` file of the content of `/home/user/yaml-upgraded`.
-
-```
-./yamles upgrade --source yaml-to-upgrade.tar.gz --passphrase secret --output-dir /home/user/yaml-upgraded --targz yaml-upgraded.tar.gz
-```
-
-{{< alert title="Note">}}
-The YAML configuration upgraded is encrypted with the same passphrase as the source YAML configuration.
-{{< /alert >}}
-
 You can run the following help command for more details on each parameter of the `upgrade` option:
 
 ```
