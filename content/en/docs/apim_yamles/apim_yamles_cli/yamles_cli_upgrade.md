@@ -6,18 +6,9 @@
 "description": "Learn how to use the YAML configuration CLI to upgrade a YAML configuration."
 }
 
-The `upgrade` option may be used to upgrade YAML configurations. Both full configurations, and configuration fragments can be upgraded the same way.
+The `upgrade` option enables you to upgrade YAML configurations or YAML configuration fragments to their latest version. The `upgrade` option is the centralized entry point to upgrade any kind of YAML configuration.
 
-{{% alert color="warning" title="Upgrade Caution" %}}
-
-* YAML configurations upgrade is supported starting with version 7.7 May 2021.
-* If you need to upgrade an old YAML configuration dated before May 2021, you can upgrade the XML federated configuration using [upgradeconfig](/docs/apim_installation/apigw_upgrade/upgrade_analytics/#upgradeconfig-options) or [projupgrade](/docs/apim_reference/devopstools_ref/#projupgrade-command-options) and convert it again to YAML configuration using the latest YAML CLI [fed2yaml](/docs/apim_yamles/apim_yamles_cli/yamles_cli_convert/#convert-your-xml-configuration-to-a-yaml-configuration) or [frag2yaml](/docs/apim_yamles/apim_yamles_cli/yamles_cli_convert/#convert-your-xml-configuration-fragment-to-a-yaml-configuration-fragment).
-
-{{% /alert %}}
-
-## Upgrade a YAML configuration
-
-The `upgrade` option has the same goal as the [projupgrade](/docs/apim_reference/devopstools_ref/) tool existing for XML federated configurations. It enables you to upgrade YAML configurations or YAML configuration fragments from earlier versions (7.7 May2021 and later) to the latest. The `upgrade` option is the centralized entry point to upgrade any kind of YAML configuration.
+The following are examples of different ways that you can use the `upgrade` option to update your YAML configuration.
 
 **Example 1:**
 
@@ -60,7 +51,7 @@ The `upgrade` option has the same goal as the [projupgrade](/docs/apim_reference
 ```
 
 {{< alert title="Note">}}
-YAML configuration upgraded will be encrypted with the same passphrase as the source YAML configuration
+The YAML configuration upgraded is encrypted with the same passphrase as the source YAML configuration.
 {{< /alert >}}
 
 **Example 5:**
@@ -75,10 +66,10 @@ YAML configuration upgraded will be encrypted with the same passphrase as the so
 ```
 
 {{< alert title="Note">}}
-YAML configuration upgraded will be encrypted with the same passphrase as the source YAML configuration
+The YAML configuration upgraded is encrypted with the same passphrase as the source YAML configuration.
 {{< /alert >}}
 
-You can run the following help command for more details on each parameter:
+You can run the following help command for more details on each parameter of the `upgrade` option:
 
 ```
 yamles upgrade --help
